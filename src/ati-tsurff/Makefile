@@ -6,7 +6,7 @@ hydrogen_im : libqprop.a hydrogen_im.cc
 	$(CXX) $(optimargs) -std=c++0x hydrogen_im.cc -o hydrogen_im -I. -I../base -lqprop -lm -L../../lib/x86_64
 
 hydrogen_re : libqprop.a hydrogen_re.cc
-	$(CXX) $(optimargs) -std=c++0x hydrogen_re.cc -o hydrogen_re -I. -I../base -lqprop -lm -L../../lib/x86_64  
+	$(CXX) $(optimargs) -std=c++0x hydrogen_re.cc -o hydrogen_re -I. -I../base -lqprop -lm $(gslargs) -L../../lib/x86_64  
 
 eval-tsurff : libqprop.a eval-tsurff.cc
 	$(CXX) $(optimargs) -std=c++0x eval-tsurff.cc -o eval-tsurff -I. -I../base -lqprop -lm  $(gslargs) -L../../lib/x86_64
