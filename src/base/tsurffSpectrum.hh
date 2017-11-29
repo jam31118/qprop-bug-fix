@@ -350,8 +350,8 @@ private:
     long i_k_min=0;
     long i_k_max=num_k_surff;
 #ifdef HAVE_MPI
-    i_k_min=i_proc*num_k_proc;
-    i_k_max=(i_proc+1)*num_k_proc;
+    i_k_min=i_proc * ( num_k_surff / num_proc );
+    i_k_max=(i_proc+1) * ( num_k_surff / num_proc );
     if (i_proc==(num_proc-1))
       i_k_max+=num_k_surff%num_proc;
 #endif
